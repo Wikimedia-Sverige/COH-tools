@@ -338,7 +338,6 @@ def make_dataset(country, language):
     Only kept for backwards-compatibility with older monument classes.
     """
     from Monument import Dataset
-    from AtDe import AtDe
     from DkBygningDa import DkBygningDa
     from DkFortidsDa import DkFortidsDa
     from EeEt import EeEt
@@ -351,12 +350,6 @@ def make_dataset(country, language):
             "class": IeEn,
             "data_files": {"counties": "ireland_counties.json"}},
         "monuments_za_(en)": {"class": ZaEn, "data_files": {}},
-        "monuments_at_(de)": {
-            "class": AtDe,
-            "data_files": {
-                "municipalities": "austria_municipalities.json"},
-            "lookup_downloads": {
-                "types": "at_(de)/types"}},
         "monuments_dk-bygninger_(da)": {
             "class": DkBygningDa,
             "data_files": {},
