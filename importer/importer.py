@@ -338,28 +338,15 @@ def make_dataset(country, language):
     Only kept for backwards-compatibility with older monument classes.
     """
     from Monument import Dataset
-    from CzCs import CzCs
     from AtDe import AtDe
     from DkBygningDa import DkBygningDa
     from DkFortidsDa import DkFortidsDa
     from EeEt import EeEt
-    from HuHu import HuHu
     from IeEn import IeEn
     from NoNo import NoNo
     from PlPl import PlPl
-    from PtPt import PtPt
-    from SeArbetslSv import SeArbetslSv
-    from SeBbrSv import SeBbrSv
-    from SeShipSv import SeShipSv
     from ZaEn import ZaEn
     SPECIFIC_TABLES = {
-        "monuments_se-ship_(sv)": {
-            "class": SeShipSv,
-            "data_files": {
-                "functions": "se-ship_(sv)_functions.json"}},
-        "monuments_cz_(cs)": {"class": CzCs, "data_files": {}},
-        "monuments_hu_(hu)": {"class": HuHu, "data_files": {}},
-        "monuments_pt_(pt)": {"class": PtPt, "data_files": {}},
         "monuments_ie_(en)": {
             "class": IeEn,
             "data_files": {"counties": "ireland_counties.json"}},
@@ -383,20 +370,9 @@ def make_dataset(country, language):
                 "types": "dk-fortidsminder_(da)_types.json",
                 "municipalities": "denmark_municipalities.json"}},
         "monuments_no_(no)": {"class": NoNo, "data_files": {}},
-        "monuments_se-bbr_(sv)": {
-            "class": SeBbrSv,
-            "data_files": {
-                "functions": "se-bbr_(sv)_functions.json",
-                "settlements": "sweden_settlements.json"}},
         "monuments_ee_(et)": {
             "class": EeEt,
-            "data_files": {"counties": "estonia_counties.json"}},
-        "monuments_se-arbetsl_(sv)": {
-            "class": SeArbetslSv,
-            "data_files": {
-                "municipalities": "sweden_municipalities.json",
-                "types": "se-arbetsl_(sv)_types.json",
-                "settlements": "sweden_settlements.json"}}
+            "data_files": {"counties": "estonia_counties.json"}}
         }
     specific_table_name = utils.get_specific_table_name(country, language)
     specific_table = None
