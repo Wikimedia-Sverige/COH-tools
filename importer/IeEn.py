@@ -1,4 +1,4 @@
-from Monument import Monument
+from Monument import Monument, Dataset
 import importer_utils as utils
 
 
@@ -31,3 +31,13 @@ class IeEn(Monument):
         # self.set_location()
         # self.exists_with_prop(mapping)
         self.print_wd()
+
+
+if __name__ == "__main__":
+    """Command line entry point for importer."""
+    args = importer.handle_args()
+    dataset = Dataset("ie", "en", IeEn)
+    dataset.data_files = {
+        "counties": "ireland_counties.json"
+    }
+    importer.main(args, dataset)

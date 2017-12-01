@@ -1,4 +1,4 @@
-from Monument import Monument
+from Monument import Monument, Dataset
 import importer_utils as utils
 
 
@@ -24,3 +24,10 @@ class ZaEn(Monument):
         # self.set_location()
         self.exists_with_prop(mapping)
         # self.print_wd()
+
+
+if __name__ == "__main__":
+    """Command line entry point for importer."""
+    args = importer.handle_args()
+    dataset = Dataset("za", "en", ZaEn)
+    importer.main(args, dataset)

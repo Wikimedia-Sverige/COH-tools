@@ -338,24 +338,7 @@ def make_dataset(country, language):
     Only kept for backwards-compatibility with older monument classes.
     """
     from Monument import Dataset
-    from EeEt import EeEt
-    from IeEn import IeEn
-    from NoNo import NoNo
-    from PlPl import PlPl
-    from ZaEn import ZaEn
-    SPECIFIC_TABLES = {
-        "monuments_ie_(en)": {
-            "class": IeEn,
-            "data_files": {"counties": "ireland_counties.json"}},
-        "monuments_za_(en)": {"class": ZaEn, "data_files": {}},
-        "monuments_pl_(pl)": {
-            "class": PlPl,
-            "data_files": {"settlements": "poland_settlements.json"}},
-        "monuments_no_(no)": {"class": NoNo, "data_files": {}},
-        "monuments_ee_(et)": {
-            "class": EeEt,
-            "data_files": {"counties": "estonia_counties.json"}}
-        }
+    SPECIFIC_TABLES = {}
     specific_table_name = utils.get_specific_table_name(country, language)
     specific_table = None
     if specific_table_name in SPECIFIC_TABLES:
